@@ -6,7 +6,7 @@ hello: clean
 
 .PHONY: tinygo
 tinygo: clean
-	docker run --rm -v $$(pwd):/go/src/github.com/johanbrandhorst/wasm-experiments tinygo/tinygo:0.8.0 /bin/bash -c "\
+	docker run --rm -v $$(pwd):/go/src/github.com/johanbrandhorst/wasm-experiments tinygo/tinygo:0.17.0 /bin/bash -c "\
 			cd /go/src/github.com/johanbrandhorst/wasm-experiments && \
 			tinygo build -o ./html/test.wasm -target wasm --no-debug ./$(target)/main.go && \
 			cp /usr/local/tinygo/targets/wasm_exec.js ./html/wasm_exec.js\
